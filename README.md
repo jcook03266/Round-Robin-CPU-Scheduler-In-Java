@@ -1,4 +1,3 @@
-First off,
 ///////What is CPU Scheduling?/////////////////////////////////
 CPU scheduling at the fundamental level is a method of assigning work 
 to specific resources that will then complete said work, i.e cores on a cpu.
