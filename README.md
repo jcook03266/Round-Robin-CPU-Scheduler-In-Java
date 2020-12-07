@@ -1,4 +1,5 @@
 ///////What is CPU Scheduling?/////////////////////////////////
+
 CPU scheduling at the fundamental level is a method of assigning work 
 to specific resources that will then complete said work, i.e cores on a cpu.
 This work can be entirely virtual implementations of computational instances 
@@ -9,6 +10,7 @@ be comprised of processor cores much like I mentioned earlier, expansion cards i
 graphics cards and even network links.
 
 ///////Why do we need CPU Scheduling?/////////////////////////////////
+
 We use cpu scheduling for mainly efficiency purposes, we schedule tasks to 
 be handled later on down the line in order to prevent cpu from idling and wasting 
 precious cycles it could be using for doing essential work. This efficiency is then
@@ -20,6 +22,7 @@ executed and allocated the cpu to one of them. Now the allocation process is up 
 scheduling algorithm, this is where Round Robin and many other algorithms come into play.
 
 ///////What is the Round Robin Scheduling algorithm and how does it work?/////////////////////////////////
+
 The Round Robin Scheduling algorithm is a scheduling algorithm utilized by process and 
 network schedulers in computing. In this algorithm there are time slices aka time quantum that
 are equally cut up and assigned to each process in a circular order. These processes are handled in a circular
@@ -33,27 +36,32 @@ starvation like your printer refusing to print out the test page you need for yo
 pretty disastrous.
 
 ///////How was this algorithm simulated in Java?/////////////////////////////////
+
 In Java, you implement Round Robin easily with the many libraries available. In terms
 of hard coding the functionality you break the scheduling algorithm into 5 parts:
 --------------------------------------------------------------------------------------
 <Look at source code for the appropriate methods and variables and java libraries used in each class>
 
 1.) CPU Class-
+
 In this class we execute the processes and see if their remaining burst times are less than, greater than or 
 equal to the time quantum value, if any, we update the remaining burst time, mark the processes as completed with the counter
 and return the time quantum value or the remaining burst time depending on the condition.
 
 2.) Clock Class-
+
 Clock Class, In this class we update the time elapsed since the start of the simulation, we update the arrival time of 
 a process waiting to get into the ready queue, as well as the wait time of a process already in the ready queue by using an iterator
 and then setting the wait time of the current cpu
 
 3.) Process Class-
+
 Process class enables the creation of our process objects which use like trading cards with the other
 classes, with clock and cpu enabling the tracking of these processes and the statistics attributed to them 
 via later analysis performed in the execution class. All of the process objects start off here.
 
 4.) Execution Class-
+
 This is where all of our process objects go to get executed and analyzed while being executed
 by the round robin scheduling algorithm. We basically input a process into the scheduling algorithm where we track
 whether or not it has been completed or not, its position in the ready queue, whether it's ready to go into the ready
@@ -61,6 +69,7 @@ queue or come out of it to be executed, and if it has to go back into the queue 
 self explanatory, it executes the processes using RR.
 
 5.) Main Class-
+
 This is where the processes are parsed from the input file and placed into arrays with their
 proper information in order to be turned into process objects that retain all of this necessary information for later
 tracking application and analysis. This class accepts the two fundamental inputs which are the time quantum and the input file that is parsed.
@@ -71,6 +80,7 @@ To further simplify simulating and debugging this scheduling algorithm we can de
 
 This is the 6th Class that bridges all of the others together
 6.) GUI Class-
+
 Basic GUI that allows the user to interact with the round robin algorithm with simplicity
 The user simply provides the path directory to the csv format file that's required by this implementation of 
 the scheduler via typing it directly, or by importing it, and gives the time quantum value by sliding the slider from 1 - 15 at an interval of 1. The results
