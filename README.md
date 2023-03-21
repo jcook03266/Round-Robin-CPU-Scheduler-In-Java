@@ -1,3 +1,5 @@
+![Screenshot 2023-03-21 162441](https://user-images.githubusercontent.com/63657230/226732327-bc84c8b8-df7d-4d49-bfea-9d39848cf657.png)
+
 ///////What is CPU Scheduling?/////////////////////////////////
 
 CPU scheduling at the fundamental level is a method of assigning work 
